@@ -33,7 +33,7 @@ public class PromotionalMaterialController {
 	}
 	
 	@RequestMapping(value="promotionalMaterial", method = RequestMethod.PUT)
-	public ResponseEntity<PromotionalMaterial> updateMovie(@RequestBody PromotionalMaterial promotionalMaterial) {
+	public ResponseEntity<PromotionalMaterial> updatePromotionalMaterial(@RequestBody PromotionalMaterial promotionalMaterial) {
 		promotionalMaterialRepository.save(promotionalMaterial);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
@@ -82,7 +82,7 @@ public class PromotionalMaterialController {
 	
 
 	
-	@RequestMapping(value="movie/id/{id}", method = RequestMethod.DELETE) 
+	@RequestMapping(value="promotionalMaterial/id/{id}", method = RequestMethod.DELETE) 
 	public ResponseEntity<?> deleteById(@PathVariable("id") Long id ) {
 	promotionalMaterialRepository.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
@@ -96,11 +96,6 @@ public class PromotionalMaterialController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	  @RequestMapping(value = "movies", method = RequestMethod.DELETE)
-	  public ResponseEntity<?>deleteAll(){
-		 promotionalMaterialRepository.deleteAll();
-		  return new ResponseEntity<>(HttpStatus.OK);
-	  }
-	  
+	
 
 }
